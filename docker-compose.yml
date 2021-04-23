@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  esphome:
+    hostname: esphome
+    container_name: "esphome_${DOMAIN_NAME}"
+    image: esphome/esphome
+    volumes:
+      - "${DATA_PATH}:/config:rw"
+      # Use local time for logging timestamps
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    network_mode: host
+    restart: always
