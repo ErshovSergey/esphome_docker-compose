@@ -9,7 +9,8 @@ services:
       - "${DATA_PATH}:/config:rw"
       # Use local time for logging timestamps
       - /etc/localtime:/etc/localtime:ro
-    devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
+# для прошивки через COM порт сервера раскомментировать следующие две строки
+#    devices:
+#      - "/dev/ttyUSB0:/dev/ttyUSB0"
     network_mode: host
     restart: always
